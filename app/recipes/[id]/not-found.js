@@ -9,7 +9,7 @@ export default function RecipeNotFound() {
       </svg>
       <h1 className="text-5xl font-bold text-gray-700 mb-4">404 - Recipe Not Found</h1>
       <p className="text-xl text-gray-600 mb-8">
-        Oops! We couldn't find the recipe you were looking for.
+        Oops! We could not find the recipe you were looking for.
       </p>
       <p className="text-gray-500 mb-8">
         It might have been removed, or the ID might be incorrect.
