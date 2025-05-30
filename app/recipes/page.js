@@ -1,80 +1,3 @@
-// "use client";
-// import Link from 'next/link';
-// import Image from 'next/image';
-
-// async function getAllRecipes() {
-//   try {
-//     const res = await fetch(`${process.env.NEXT_PUBLIC_API_URL || 'http://localhost:3000'}/api/recipes`, {
-//       cache: 'no-store',
-//     });
-
-//     if (!res.ok) {
-//       throw new Error(`Failed to fetch recipes: ${res.status} ${res.statusText}`);
-//     }
-
-//     const data = await res.json();
-//     return data.recipes || [];
-//   } catch (error) {
-//     console.error("Error fetching all recipes:", error);
-//     return [];
-//   }
-// }
-
-// export default async function RecipesPage() {
-//   const recipes = await getAllRecipes();
-
-//   if (!recipes || recipes.length === 0) {
-//     return (
-//       <div className="bg-white p-6 rounded-lg shadow-lg text-center">
-//         <h2 className="text-3xl font-semibold mb-4 text-gray-800">All Recipes</h2>
-//         <p className="text-gray-600">No recipes found. Try adding some!</p>
-//       </div>
-//     );
-//   }
-
-//   return (
-//     <div className="bg-white p-6 rounded-lg shadow-lg">
-//       <h2 className="text-3xl font-semibold mb-6 text-gray-800 border-b pb-3">All Recipes</h2>
-//       <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
-//         {recipes.map((recipe) => (
-//           <Link
-//             href={`/recipes/${recipe.id}`}
-//             key={recipe.id}
-//             className="block group"
-//             aria-label={`View details for ${recipe.name}`}
-//           >
-//             <div className="border rounded-lg overflow-hidden shadow-md hover:shadow-xl transition-shadow duration-300 h-full flex flex-col cursor-pointer">
-//               <div className="w-full h-48 relative">
-//                 <Image
-//                   src={recipe.image || '/images/placeholder.jpg'}
-//                   alt={recipe.name}
-//                   layout="fill"
-//                   objectFit="cover"
-//                   className="transition-transform duration-300 group-hover:scale-105"
-
-//                 />
-//               </div>
-
-//               <div className="p-4 flex flex-col flex-grow">
-//                 <h3 className="text-xl font-semibold mb-2 text-blue-600 group-hover:text-blue-800">
-//                   {recipe.name}
-//                 </h3>
-//                 <p className="text-gray-600 text-sm mb-1">Cuisine: {recipe.cuisine || 'N/A'}</p>
-//                 <p className="text-gray-600 text-sm mb-1">Difficulty: {recipe.difficulty || 'N/A'}</p>
-//                 <div className="mt-auto pt-2">
-//                   <span className="inline-block bg-blue-100 text-blue-700 text-xs px-2 py-1 rounded-full">
-//                     View Details
-//                   </span>
-//                 </div>
-//               </div>
-//             </div>
-//           </Link>
-//         ))}
-//       </div>
-//     </div>
-//   );
-// }
-
 import Link from "next/link";
 import Image from "next/image";
 
@@ -82,7 +5,6 @@ async function getAllRecipes() {
   const apiUrl = `${
     process.env.NEXT_PUBLIC_API_URL || "http://localhost:3000"
   }/api/recipes`;
-  console.log(`[RecipesPage - Server] Fetching recipes from: ${apiUrl}`);
 
   try {
     const res = await fetch(apiUrl, {
